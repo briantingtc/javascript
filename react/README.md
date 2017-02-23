@@ -1,6 +1,6 @@
-# Airbnb React/JSX Style Guide
+# Jane React/JSX Style Guide
 
-*A mostly reasonable approach to React and JSX*
+*Heavily Borrowed from the Airbnb Style Guide*
 
 ## Table of Contents
 
@@ -25,7 +25,7 @@
   - Only include one React component per file.
     - However, multiple [Stateless, or Pure, Components](https://facebook.github.io/react/docs/reusable-components.html#stateless-functions) are allowed per file. eslint: [`react/no-multi-comp`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-multi-comp.md#ignorestateless).
   - Always use JSX syntax.
-  - Do not use `React.createElement` unless you're initializing the app from a file that is not JSX.
+  - Do not use `React.createElement` unless you're initializing the app or creating a higher order component.
 
 ## Class vs `React.createClass` vs stateless
 
@@ -59,15 +59,11 @@
       }
     }
 
-    // bad (relying on function name inference is discouraged)
+    // good
     const Listing = ({ hello }) => (
       <div>{hello}</div>
     );
 
-    // good
-    function Listing({ hello }) {
-      return <div>{hello}</div>;
-    }
     ```
 
 ## Mixins
@@ -78,7 +74,7 @@
 
 ## Naming
 
-  - **Extensions**: Use `.jsx` extension for React components.
+  - **Extensions**: Use `.js` extension for React components.
   - **Filename**: Use PascalCase for filenames. E.g., `ReservationCard.jsx`.
   - **Reference Naming**: Use PascalCase for React components and camelCase for their instances. eslint: [`react/jsx-pascal-case`](https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-pascal-case.md)
 
